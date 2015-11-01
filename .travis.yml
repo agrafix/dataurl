@@ -16,11 +16,13 @@ install:
 script:
 - stack build --pedantic --no-terminal
 before_deploy:
-  - export RELEASE_FILE=$(stack exec -- which twirec)
-  - echo "Binary $RELEASE_FILE will be deployed to GitHub"
+- export RELEASE_FILE=$(stack exec -- which twirec)
+- echo "Binary $RELEASE_FILE will be deployed to GitHub"
 deploy:
   provider: hackage
   username: AlexanderThiemann
   skip_cleanup: true
   on:
     tags: true
+  password:
+    secure: Sgj+xCqSRH6FzYgHqe2/FCnFqBNJ9voSUW2KbA+Y2eOmmMCdaW9M6pZA8dETBK6Q/MosYYnouRgh4iJ8NenqqzFeb2BVF1KClEH8j8Xr109S3di+zQ2RSf0b7wFk9bOImtv4oWiIdFExZJ5HKhd4gqxh/tkuiqy+wp23MI8XKF92XTk8XcLZbODj5dcUL9w6s+Qo3rNvyksaL1RPRqEEPm/Cp+3ZhgoEi9ZNor7g0kqoMvNqQcF9E5KEY2z9SGqTJcHdhYX0KibtRs4WXlzhyh8eYQCOn64R2IgAu8F22u2RxWKgmAZpetBPzZX5z0useoJp0VE1BNPQLWZjhQwpPZJEqcAZoLT2ROwYfy4Xdvdcbhz2Acx8wtCdPMeGL0T3J99gTlfoKqgUqvS24qOAU5tHhuTCjlpX89WduLFzykX5YBdordiitwvtrVpA2sVqm8ZxG45MsvEZhA7aHA+uU3j/kQwn9SlCl7oiWwVPq16LwsvMR7LyfvwC5l36OOjeHILQZk5wG99hnWlhQQyAkKGeSXHlTOl0XBni9DqhWvXS8dw41CDBWY23061CGg+VTeehih2X192WPJoHBkrPKNqqCGhBD3r7RH+dW3Dhn83dkrtHZi36RuWUYUj6tg+vrShv0Nhl/dJuLyKCHhVP330T5U1Lc0fqtj1aAmfTP2Q=
