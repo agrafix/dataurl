@@ -14,7 +14,7 @@ install:
 - stack setup --no-terminal
 - stack build --only-snapshot --no-terminal
 script:
-- stack build --pedantic --no-terminal
+- stack test --pedantic --no-terminal
 before_deploy:
 - export RELEASE_FILE=$(stack exec -- which twirec)
 - echo "Binary $RELEASE_FILE will be deployed to GitHub"
